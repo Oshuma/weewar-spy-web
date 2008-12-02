@@ -1,0 +1,12 @@
+# WeewarSpy Web configuration
+# -- EDIT THESE BEFORE RUNNING THE SERVER --
+
+# The game server; you'll want to use 'weewar.com' in most cases.
+server: 'weewar.com'
+
+# This is your Weewar username.
+username: 'username'
+
+# Your Weewar API key.
+# You can find your key here: http://weewar.com/apiToken
+api_key: '12345abcdef'
