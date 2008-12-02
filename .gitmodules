@@ -1,0 +1,3 @@
+[submodule "vendor/weewar-spy"]
+	path = vendor/weewar-spy
+	url = git://github.com/Oshuma/weewar-spy.git
