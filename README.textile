@@ -3,3 +3,5 @@ h1. WeewarSpy-Web
 This is a simple "Sinatra":http://sinatra.rubyforge.org/ app that utilizes the
 "WeewarSpy":http://github.com/Oshuma/weewar-spy/ library to gather intel on your
 "Weewar":http://weewar.com/ games.
+
+Original WeewarSpy library by "Mel Riffe":http://melriffe.wordpress.com/.
