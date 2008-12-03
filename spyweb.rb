@@ -17,7 +17,12 @@ configure do
 
   # Load the Weewar configuration.
   config_file = File.dirname(__FILE__) + '/config.yml'
-  raise 'Cannot find config.yml' unless File.exists?(config_file)
+  unless File.exists?(config_file)
+    puts 'Cannot find config.yml!'
+    puts '$ cp config.yml.example config.yml'
+    puts 'Then edit config.yml.'
+    exit
+  end
   SpyConfig = YAML.load_file(config_file)
 
   # Create an operative.
