@@ -39,7 +39,7 @@ end
 
 get '/game/:id' do
   @game = Spy.infiltrate(params[:id].to_i)
-  @report = Spy.debrief(@game)
+  @report = Spy.debrief(@game, false) # Don't print the output, just return it.
   haml :game
 end
 
