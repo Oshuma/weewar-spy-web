@@ -5,3 +5,44 @@ This is a simple "Sinatra":http://sinatra.rubyforge.org/ app that utilizes the
 "Weewar":http://weewar.com/ games.
 
 Original WeewarSpy library by "Mel Riffe":http://melriffe.wordpress.com/.
+
+h2. Dependencies
+
+* RubyGems
+* sinatra (duh...)
+* haml
+* yaml
+* xml-simple (WeewarSpy depends on this)
+
+To install all dependencies in one fell swoop:
+
+<pre>
+  $ sudo gem install sinatra haml yaml xml-simple
+</pre>
+
+h2. Usage
+
+Check out the code and update the weewar-spy submodule:
+
+<pre>
+  $ git clone git://github.com/Oshuma/weewar-spy-web.git
+  $ cd weewar-spy-web/
+  $ git submodule init
+  $ git submodule update
+</pre>
+
+After you've got the code, you'll need to copy over the <tt>config.yml.example</tt>
+file and add your Weewar details.
+
+<pre>
+  $ cp config.yml.example config.yml
+  $ $EDITOR config.yml
+</pre>
+
+Once that's done, you're ready to roll.  Just start the <tt>spyweb.rb</tt> server:
+
+<pre>
+  $ ruby spyweb.rb
+</pre>
+
+Now point your browser to <tt>http://localhost:4567/</tt> where you can view the spy reports.
