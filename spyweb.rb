@@ -62,24 +62,26 @@ __END__
       #main
         %h2 Spy Details
         #spy-details
-          %p== Name: #{SpyConfig['username']}
+          %p== Player: #{SpyConfig['username']}
           %p== Server: #{SpyConfig['server']}
         = yield
 
+
 @@ index
-%h2 Games
 #games
+  %h2 Games
   - @games.each do |id, name|
     .game{:id => id}
       %a{:href => "/game/#{id}"}= name
 
+
 @@ game
-%h2= @game.name
-%p
+#menu
   %a{:href => '/'} Headquarters
+%h2= @game.name
 #game
-  Report:
   %pre= @report
+
 
 @@ stylesheet
 html
@@ -94,9 +96,47 @@ body
   :margin-bottom 1em
   :margin-right 1em
 
-#header h1
-  :text-align center
-
 #container
   :margin 0 auto
   :width 700px
+
+#header h1
+  :margin 10px 0
+  :text-align center
+
+#main h2
+  :margin 0
+
+#main
+  #spy-details p
+    :margin 5px 0
+
+#menu
+  :margin 10px 0
+  :padding 10px 0
+  a
+    :background-color #ccc
+    :color #333
+    :text-decoration none
+    :padding 0.5em
+    &:hover
+      :background-color #333
+      :color #ccc
+
+#games h2
+  :margin-top 1em
+  :margin-bottom 0.5em
+#games div
+  :margin 10px 0
+#games a
+  :border-bottom 1px dashed #333
+  :color #333
+  :text-decoration none
+  &:hover
+    :border-bottom 1px solid #333
+
+#game pre
+  :background-color #eee
+  :border 1px dashed black
+  :margin 0.5em
+  :padding 0.75em
