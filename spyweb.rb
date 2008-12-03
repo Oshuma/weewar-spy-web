@@ -70,9 +70,10 @@ __END__
 @@ index
 #games
   %h2 Games
-  - @games.each do |id, name|
-    .game{:id => id}
-      %a{:href => "/game/#{id}"}= name
+  %ul
+    - @games.each do |id, name|
+      %li.game{:id => id}
+        %a{:href => "/game/#{id}"}= name
 
 
 @@ game
@@ -125,9 +126,12 @@ body
 
 #games h2
   :margin-top 1em
-  :margin-bottom 0.5em
-#games div
-  :margin 10px 0
+#games ul
+  :list-style-type square
+  :margin 5px 0
+  :padding-left 1em
+#games li
+  :padding 5px
 #games a
   :border-bottom 1px dashed #333
   :color #333
