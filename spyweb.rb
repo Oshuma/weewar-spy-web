@@ -33,7 +33,7 @@ configure do
 end
 
 get '/' do
-  @games = Spy.games
+  @games = Spy.games.sort
   haml :index
 end
 
@@ -45,6 +45,8 @@ end
 get '/game/:id' do
   @game = Spy.infiltrate(params[:id].to_i)
   @report = Spy.debrief(@game, false) # Don't print the output, just return it.
+  @game_button_label = 'View Game'
+  @game_button_label = 'Play Game' if @game.current_player == Spy.director
   haml :game
 end
 
@@ -84,6 +86,7 @@ __END__
 @@ game
 #menu
   %a{:href => '/'} Headquarters
+  %a{:href => "#{@game.url}", :target => "_blank"}= @game_button_label
 %h2= @game.name
 #game
   %pre= @report
