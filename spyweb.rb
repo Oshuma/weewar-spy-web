@@ -61,6 +61,8 @@ __END__
     %title= Title
     %link{:rel => 'stylesheet', :href => '/styles.css', :type => 'text/css'}
     %meta{'http-equiv' => 'Content-Type', :content => 'text/html'}
+    /
+      %meta{'http-equiv' => 'Refresh', :content => '10; URL=http://localhost:4567/'}
 
   %body
     #container
